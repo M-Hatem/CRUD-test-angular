@@ -1,0 +1,41 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { IItem } from '../models/item.model';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json; charset=UTF-8',
+  }),
+};
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ItemsService {
+  constructor(private _Http: HttpClient) {}
+
+  getItems() {
+    return this._Http.get(
+      'http://40.127.194.127:777/api/Emergency/GetAllArrivingMethods?first=0&page=0&rows=10',
+      httpOptions
+    );
+  }
+
+  addItem(item: IItem) {
+    return this._Http.post(
+      'http://40.127.194.127:777/api/Emergency/AddOrUpdateArrivingMethod',
+      JSON.stringify(item),
+      httpOptions
+    );
+  }
+
+  deleteItem(id: number) {
+    const formData = JSON.stringify(id);
+
+    return this._Http.post(
+      'http://40.127.194.127:777/api/Emergency/DeleteArrivingMethod',
+      formData,
+      httpOptions
+    );
+  }
+}

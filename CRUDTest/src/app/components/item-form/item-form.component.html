@@ -1,0 +1,98 @@
+<form (ngSubmit)="onSubmit(itemForm)" [formGroup]="itemForm">
+  <div class="row">
+    <div class="col-6 mb-4">
+      <mdb-form-control>
+        <input
+          mdbInput
+          type="text"
+          id="arabic"
+          class="form-control"
+          formControlName="arrivingArabicName"
+        />
+        <label mdbLabel class="form-label" for="arabic"> Arabic Name </label>
+      </mdb-form-control>
+      <span
+        class="text-danger fs-6"
+        *ngIf="
+          itemForm.controls.arrivingArabicName.touched &&
+          !itemForm.controls.arrivingArabicName.valid
+        "
+      >
+        You must fill this Filed!
+      </span>
+    </div>
+    <div class="col-6 mb-4">
+      <mdb-form-control>
+        <input
+          mdbInput
+          type="text"
+          id="english"
+          class="form-control"
+          formControlName="arrivingEnglishName"
+        />
+        <label mdbLabel class="form-label" for="english">English Name</label>
+      </mdb-form-control>
+      <span
+        class="text-danger fs-6"
+        *ngIf="
+          itemForm.controls.arrivingEnglishName.touched &&
+          !itemForm.controls.arrivingEnglishName.valid
+        "
+      >
+        You must fill this Filed!
+      </span>
+    </div>
+    <div class="col-6 mb-4">
+      <mdb-form-control>
+        <input
+          mdbInput
+          type="number"
+          id="id"
+          class="form-control"
+          formControlName="id"
+        />
+        <label mdbLabel class="form-label" for="id">Id</label>
+      </mdb-form-control>
+      <span
+        class="text-danger fs-6"
+        *ngIf="itemForm.controls.id.touched && !itemForm.controls.id.valid"
+      >
+        You must fill this Filed!
+      </span>
+    </div>
+    <div class="col-6 mb-4">
+      <mdb-form-control>
+        <input
+          mdbInput
+          type="number"
+          id="sort"
+          class="form-control"
+          formControlName="sort"
+        />
+        <label mdbLabel class="form-label" for="sort">Sort</label>
+      </mdb-form-control>
+      <span
+        class="text-danger fs-6"
+        *ngIf="itemForm.controls.sort.touched && !itemForm.controls.sort.valid"
+      >
+        You must fill this Filed!
+      </span>
+    </div>
+    <div class="col-12 mb-4">
+      <mdb-form-control>
+        <input
+          mdbInput
+          type="text"
+          id="accountId"
+          class="form-control"
+          disabled
+          value="1"
+        />
+        <label mdbLabel class="form-label" for="accountId">Account Id</label>
+      </mdb-form-control>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!itemForm.valid">
+      Add Item
+    </button>
+  </div>
+</form>

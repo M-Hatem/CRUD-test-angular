@@ -1,0 +1,29 @@
+<button
+  type="button"
+  class="list-group-item list-group-item-action px-3 border-0 active"
+  aria-current="true"
+>
+  <div class="d-flex justify-content-between align-items-center">
+    <p class="m-0">
+      {{ item.arrivingEnglishName }} - {{ item.arrivingArabicName }}
+    </p>
+    <div class="ms-auto">
+      <button
+        type="button"
+        rounded
+        class="btn btn-primary me-2"
+        (click)="editItem(item.id)"
+      >
+        Edit
+      </button>
+      <button
+        type="button"
+        rounded
+        class="btn btn-danger"
+        (click)="deleteItem(item.id)"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</button>
