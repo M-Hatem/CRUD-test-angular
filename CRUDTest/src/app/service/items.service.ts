@@ -14,6 +14,7 @@ const httpOptions = {
 export class ItemsService {
   constructor(private _Http: HttpClient) {}
 
+  // To get all items
   getItems() {
     return this._Http.get(
       'http://40.127.194.127:777/api/Emergency/GetAllArrivingMethods?first=0&page=0&rows=10',
@@ -21,6 +22,7 @@ export class ItemsService {
     );
   }
 
+  // To add a new item
   addItem(item: IItem) {
     return this._Http.post(
       'http://40.127.194.127:777/api/Emergency/AddOrUpdateArrivingMethod',
@@ -29,6 +31,16 @@ export class ItemsService {
     );
   }
 
+  // To edit an item
+  editItem(item: IItem) {
+    return this._Http.post(
+      'http://40.127.194.127:777/api/Emergency/AddOrUpdateArrivingMethod',
+      JSON.stringify(item),
+      httpOptions
+    );
+  }
+
+  // To delete an item
   deleteItem(id: number) {
     const formData = JSON.stringify(id);
 
