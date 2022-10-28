@@ -1,3 +1,7 @@
 <div class="list-group list-group-light">
-  <app-single-item *ngFor="let item of items" [item]="item"></app-single-item>
+  <app-single-item
+    *ngFor="let item of items"
+    [item]="item"
+    (refresh)="getAllItems()"
+  ></app-single-item>
 </div>

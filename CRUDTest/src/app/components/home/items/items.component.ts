@@ -14,8 +14,11 @@ export class ItemsComponent implements OnInit {
   constructor(private _ItemsService: ItemsService) {}
 
   ngOnInit(): void {
+    this.getAllItems();
+  }
+
+  getAllItems() {
     this._ItemsService.getItems().subscribe((data: any) => {
-      console.log(data);
       const { data: allItems } = data;
       this.items = allItems;
     });

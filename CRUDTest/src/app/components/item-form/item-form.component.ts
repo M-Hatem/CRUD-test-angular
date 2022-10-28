@@ -18,11 +18,18 @@ export class ItemFormComponent implements OnInit {
     private _FormBuilder: FormBuilder,
     private _Router: Router
   ) {
+    // if(this._Router.url.split('/')[2]){
+    //   this.itemForm = this._FormBuilder.group({
+    //     arrivingArabicName: ['', [Validators.required]],
+    //     arrivingEnglishName: ['', [Validators.required]],
+    //     id: ['', [Validators.required]],
+    //     sort: ['', [Validators.required]],
+    //   });
+    // }
+
     this.itemForm = this._FormBuilder.group({
       arrivingArabicName: ['', [Validators.required]],
       arrivingEnglishName: ['', [Validators.required]],
-      id: ['', [Validators.required]],
-      sort: ['', [Validators.required]],
     });
   }
 
