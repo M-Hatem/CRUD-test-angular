@@ -1,6 +1,4 @@
-# Project Title
-
-CRUD Test
+# CRUD Test
 
 ## Table of content
 
