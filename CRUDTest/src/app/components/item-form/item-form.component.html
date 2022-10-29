@@ -1,4 +1,7 @@
-<form (ngSubmit)="onSubmit(itemForm)" [formGroup]="itemForm">
+<form
+  (ngSubmit)="id ? onEdit(itemForm) : onSubmit(itemForm)"
+  [formGroup]="itemForm"
+>
   <div class="row">
     <div class="col-6 mb-4">
       <mdb-form-control>
@@ -42,21 +45,8 @@
         You must fill this Filed!
       </span>
     </div>
-    <div class="col-12 mb-4">
-      <mdb-form-control>
-        <input
-          mdbInput
-          type="text"
-          id="accountId"
-          class="form-control"
-          disabled
-          value="1"
-        />
-        <label mdbLabel class="form-label" for="accountId">Account Id</label>
-      </mdb-form-control>
-    </div>
     <button class="btn btn-primary" type="submit" [disabled]="!itemForm.valid">
-      Add Item
+      {{ id ? "Edit Item" : "Add Item" }}
     </button>
   </div>
 </form>

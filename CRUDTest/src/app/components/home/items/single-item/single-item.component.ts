@@ -12,7 +12,6 @@ import Swal from 'sweetalert2';
 })
 export class SingleItemComponent implements OnInit {
   @Input('item') item!: IItem;
-
   @Output() refresh = new EventEmitter();
 
   constructor(private _ItemsService: ItemsService, private _Router: Router) {}
