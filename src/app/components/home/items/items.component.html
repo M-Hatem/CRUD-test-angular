@@ -38,7 +38,7 @@
   <app-single-item
     *ngFor="let item of items"
     [item]="item"
-    (refresh)="paginateAfterDelete()"
+    (refresh)="pages ? paginateAfterDelete() : getAllItems()"
   ></app-single-item>
   <p-paginator
     class="mt-4"
