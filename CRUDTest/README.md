@@ -1,27 +1,30 @@
-# CRUDTest
+# Project Title
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+CRUD Test
 
-## Development server
+## Table of content
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Description](#project-description)
+- [Usage](#usage)
+- [Technologies](#technologies-i-used)
+- [Installation](#installation)
 
-## Code scaffolding
+## Project Description
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This is a CRUD system for adding, modifying and removing items from or to a database with a validation system for making all things right.
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The home page is the items-list that show all the available items that anyone can add, you simply add a new item by navigatiog to add item page and an alert will be shown to confirm that action, you will be able to modify the item you selected, you will be able to remove any item by pressing delete button, a new alert will be shown to confirm your action.
 
-## Running unit tests
+## Technologies i used
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular CLI for generating components and service.
+- Sass for styling.
+- Bootstrap V5 for styling.
+- mdbootstrap for components and style.
+- primeNG for pagination and forms.
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Simply type in Terminal **_npm install_** and then **_ng serve_** or **_ng s_** for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

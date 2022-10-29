@@ -18,14 +18,17 @@ export class SingleItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // To edit an item
   editItem(id: number) {
     this._Router.navigate(['edit-item', id]);
   }
 
+  // To refresh items after deletion
   refreshItems() {
     this.refresh.emit();
   }
 
+  // For deleting an item
   deleteItem(id: number) {
     this._ItemsService.deleteItem(id).subscribe((data: any) => {
       const { statusCode } = data;

@@ -34,6 +34,7 @@ export class ItemFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // To get all items
   getAllItems() {
     this._ItemsService.getItems().subscribe((data: any) => {
       const { data: items } = data;
@@ -56,6 +57,7 @@ export class ItemFormComponent implements OnInit {
     });
   }
 
+  // To add an item
   onSubmit(formData: FormGroup) {
     this._ItemsService.addItem(formData.value).subscribe((data: any) => {
       const { statusCode } = data;
@@ -74,6 +76,7 @@ export class ItemFormComponent implements OnInit {
     });
   }
 
+  // To edit an item
   onEdit(formData: FormGroup) {
     const value = {
       id: this.id,

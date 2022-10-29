@@ -25,6 +25,7 @@ export class ItemsComponent implements OnInit {
     this.getAllItems();
   }
 
+  // To get all items
   getAllItems() {
     this._ItemsService.getItems().subscribe((data: any) => {
       const { data: allItems, totalCount } = data;
@@ -34,6 +35,7 @@ export class ItemsComponent implements OnInit {
     });
   }
 
+  // To get specifi items by searching
   filterItems(item: string) {
     this._ItemsService.getItems().subscribe((data: any) => {
       const { data: allItems } = data;
@@ -47,9 +49,9 @@ export class ItemsComponent implements OnInit {
     });
   }
 
+  // for pagination
   paginate(event: any) {
     this.pages = { ...event };
-
     this._ItemsService
       .getItems(event.first, event.page, event.rows)
       .subscribe((data: any) => {
@@ -60,7 +62,6 @@ export class ItemsComponent implements OnInit {
 
   paginateAfterDelete() {
     const event = this.pages;
-
     this._ItemsService
       .getItems(event.first, event.page, event.rows)
       .subscribe((data: any) => {
@@ -70,11 +71,13 @@ export class ItemsComponent implements OnInit {
       });
   }
 
+  // For searching
   onSearch(formData: NgForm) {
     const value = formData.value.search.toLocaleUpperCase();
     this.filterItems(value);
   }
 
+  // For reseting form
   resetFilter(searchForm: NgForm) {
     searchForm.reset();
     this.isLoaded = true;
