@@ -15,9 +15,9 @@ export class ItemsService {
   constructor(private _Http: HttpClient) {}
 
   // To get all items
-  getItems() {
+  getItems(first: number = 0, page: number = 0, rows: number = 10) {
     return this._Http.get(
-      'http://40.127.194.127:777/api/Emergency/GetAllArrivingMethods?first=0&page=0&rows=10',
+      `http://40.127.194.127:777/api/Emergency/GetAllArrivingMethods?first=${first}&page=${page}&rows=${rows}`,
       httpOptions
     );
   }

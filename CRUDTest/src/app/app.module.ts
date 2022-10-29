@@ -14,6 +14,8 @@ import { SingleItemComponent } from './components/home/items/single-item/single-
 import { ItemFormComponent } from './components/item-form/item-form.component';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { EditItemComponent } from './components/edit-item/edit-item.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { EditItemComponent } from './components/edit-item/edit-item.component';
     SingleItemComponent,
     ItemFormComponent,
     EditItemComponent,
+    FilterPipe,
   ],
   imports: [
     FormsModule,
@@ -34,6 +37,7 @@ import { EditItemComponent } from './components/edit-item/edit-item.component';
     NoopAnimationsModule,
     HttpClientModule,
     MdbFormsModule,
+    PaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

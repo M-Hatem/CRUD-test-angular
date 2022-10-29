@@ -1,7 +1,47 @@
+<form
+  class="d-flex justify-content-between align-items-center mb-5"
+  #searchForm="ngForm"
+  (ngSubmit)="onSearch(searchForm)"
+>
+  <mdb-form-control class="w-100 me-5">
+    <input
+      mdbInput
+      type="text"
+      id="search"
+      class="form-control"
+      ngModel
+      name="search"
+    />
+    <label mdbLabel class="form-label" for="search"> Search </label>
+  </mdb-form-control>
+  <button type="submit" rounded class="btn btn-primary me-2">Search</button>
+  <button
+    type="button"
+    rounded
+    class="btn btn-danger me-2"
+    (click)="resetFilter(searchForm)"
+  >
+    Reset
+  </button>
+</form>
+
+<ng-container>
+  <div class="alert alert-danger" role="alert" *ngIf="!isLoaded">
+    No Results Found!
+  </div>
+</ng-container>
+
 <div class="list-group list-group-light">
   <app-single-item
     *ngFor="let item of items"
     [item]="item"
-    (refresh)="getAllItems()"
+    (refresh)="paginateAfterDelete()"
   ></app-single-item>
+  <p-paginator
+    class="mt-4"
+    [rows]="10"
+    [totalRecords]="totalCount"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    (onPageChange)="paginate($event)"
+  ></p-paginator>
 </div>
